@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UFT Paper Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">UFT</div>
+          <div>
+            <div class="brand-title">Paper Dashboard</div>
+            <div class="brand-subtitle">Publication readiness</div>
+          </div>
+        </div>
+        <nav class="tabs" aria-label="Dashboard sections">
+          <button class="tab active" data-tab="status">Status</button>
+          <button class="tab" data-tab="overview">Overview</button>
+          <button class="tab" data-tab="fullpaper">Full Paper</button>
+          <button class="tab" data-tab="research">Research</button>
+          <button class="tab" data-tab="insights">Insights</button>
+          <button class="tab" data-tab="supportingdata">Data</button>
+          <button class="tab" data-tab="sqldata">SQL Data</button>
+          <button class="tab" data-tab="history">History</button>
+          <button class="tab" data-tab="recovery">Recovery</button>
+          <button class="tab" data-tab="settings">Settings</button>
+        </nav>
+        <div class="side-summary">
+          <div class="side-stat">
+            <div class="side-label">Open issues</div>
+            <div id="sideIssueCount" class="side-value">--</div>
+          </div>
+          <div class="side-stat">
+            <div class="side-label">Selected fix queue</div>
+            <div id="selectedCount" class="side-value">0</div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Compact-Phase UFT</p>
+            <h1 id="paperTitle">Paper readiness dashboard</h1>
+          </div>
+          <div class="top-actions">
+            <span id="saveStatus" class="save-status">State loaded</span>
+            <button id="themeToggle" class="button theme-toggle-btn" title="Toggle theme" aria-label="Toggle dark/light theme"></button>
+          </div>
+        </header>
+
+        <section id="status" class="tab-panel active" aria-labelledby="Status">
+          <section class="status-grid">
+            <div class="score-panel">
+              <div class="score-header">
+                <div>
+                  <p class="section-kicker">Publish score</p>
+                  <div id="scoreValue" class="score-value">--%</div>
+                </div>
+                <span id="scoreLabel" class="score-label">Loading</span>
+              </div>
+              <div class="chart-wrap">
+                <canvas id="scoreChart" width="760" height="260" aria-label="Publish score over time"></canvas>
+                <div id="chartTooltip" class="chart-tooltip" role="tooltip" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="summary-panel">
+              <p class="section-kicker">Overall status</p>
+              <p id="statusSummary" class="status-copy"></p>
+              <div class="status-facts">
+                <div>
+                  <span>Current version</span>
+                  <strong id="currentVersion">--</strong>
+                </div>
+                <div>
+                  <span>Open issues</span>
+                  <strong id="openIssueCount">--</strong>
+                </div>
+                <div>
+                  <span>Top severity</span>
+                  <strong id="topSeverity">--</strong>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Recommended shape</p>
+              <h2>Publication segmentation</h2>
+            </div>
+            <p id="publicationShape" class="wide-copy"></p>
+          </section>
+
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Process</p>
+              <h2>Recheck cycle</h2>
+            </div>
+            <div id="recheckCycle" class="recheck-cycle"></div>
+          </section>
+
+          <section class="section-band compact-band">
+            <div id="runSummaryCards" class="run-summary-cards"></div>
+            <div class="issue-toolbar sticky-toolbar">
+              <div class="toolbar-top-row">
+                <div>
+                  <p class="section-kicker">Ranked issue queue</p>
+                  <h2>Issues to review and submit for the next fix round</h2>
+                  <p id="issuesSummary" class="toolbar-copy"></p>
+                </div>
+                <div id="statusToggles" class="status-toggles" aria-label="Filter by status"></div>
+              </div>
+              <div class="filters compact-filters">
+                <label>
+                  Module
+                  <select id="moduleFilter"></select>
+                </label>
+                <label>
+                  Severity
+                  <select id="severityFilter">
+                    <option value="all">All</option>
+                    <option value="blocker">Blocker</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                  </select>
+                </label>
+                <label>
+                  Show
+                  <select id="issuePageSize">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="all">All</option>
+                  </select>
+                </label>
+                <div class="pager-top">
+                  <button id="prevPage" class="button muted">Previous</button>
+                  <span id="pageLabel">Page 1</span>
+                  <button id="nextPage" class="button muted">Next</button>
+                </div>
+                <button id="selectAllIssues" class="button">Select all issues</button>
+                <button id="clearSelection" class="button muted">Clear</button>
+                <button id="submitFixSelection" class="button primary">Submit for fix</button>
+              </div>
+            </div>
+            <div id="issueList" class="issue-list compact-issues"></div>
+          </section>
+        </section>
+
+        <section id="overview" class="tab-panel" aria-labelledby="Overview">
+          <article class="article" id="overviewArticle"></article>
+        </section>
+
+        <section id="fullpaper" class="tab-panel" aria-labelledby="Full Paper">
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Full paper map</p>
+              <h2>Manuscript sections and public posture</h2>
+            </div>
+            <div id="fullPaperSections" class="paper-map"></div>
+          </section>
+        </section>
+
+        <section id="research" class="tab-panel" aria-labelledby="Research">
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Research map</p>
+              <h2>Sections and maturity lanes</h2>
+            </div>
+            <div id="researchSections" class="section-list"></div>
+          </section>
+        </section>
+
+        <section id="insights" class="tab-panel" aria-labelledby="Insights">
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Insights and areas of interest</p>
+              <h2>Further investigation paths</h2>
+            </div>
+            <div id="insightSections" class="insight-grid"></div>
+          </section>
+        </section>
+
+        <section id="supportingdata" class="tab-panel" aria-labelledby="Supporting Data">
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Supporting data</p>
+              <h2>Evidence, generated artifacts, and recovery sources</h2>
+            </div>
+            <div id="supportingDataSections" class="data-grid"></div>
+          </section>
+        </section>
+
+        <section id="sqldata" class="tab-panel" aria-labelledby="SQL Data">
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Physics paper corpus</p>
+              <h2>SQLite search and reading pane</h2>
+            </div>
+            <div id="sqlMetrics" class="metric-grid"></div>
+            <div class="sql-layout">
+              <div class="sql-search-pane">
+                <div class="sql-controls">
+                  <label>
+                    Search topics, keywords, concepts
+                    <input id="paperSearchInput" type="search" placeholder="e.g. retarded kernel noise positivity THz">
+                  </label>
+                  <label>
+                    Lane
+                    <select id="paperLaneFilter">
+                      <option value="all">All lanes</option>
+                    </select>
+                  </label>
+                  <label>
+                    Results
+                    <select id="paperResultLimit">
+                      <option value="10">10</option>
+                      <option value="25" selected>25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                    </select>
+                  </label>
+                  <button id="paperSearchButton" class="button primary">Search</button>
+                </div>
+                <div id="paperResultsMeta" class="toolbar-copy"></div>
+                <div id="paperResults" class="paper-results"></div>
+              </div>
+              <aside class="reading-pane">
+                <div id="paperReadingPane" class="reading-empty">Select a paper to read its abstract, tags, and related source links.</div>
+              </aside>
+            </div>
+          </section>
+        </section>
+
+        <section id="history" class="tab-panel" aria-labelledby="History">
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Investigation log</p>
+              <h2>Changes over time</h2>
+            </div>
+            <div id="historyList" class="history-list"></div>
+          </section>
+
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Add session note</p>
+              <h2>Continuity entry</h2>
+            </div>
+            <form id="historyForm" class="history-form">
+              <label>
+                Title
+                <input id="historyTitle" type="text" maxlength="120" required>
+              </label>
+              <label>
+                Summary
+                <textarea id="historySummary" rows="4" maxlength="900" required></textarea>
+              </label>
+              <label>
+                Impact
+                <input id="historyImpact" type="text" maxlength="220">
+              </label>
+              <button class="button primary" type="submit">Add history entry</button>
+            </form>
+          </section>
+        </section>
+
+        <section id="recovery" class="tab-panel" aria-labelledby="Recovery">
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Recovery state</p>
+              <h2>Source of truth for future sessions</h2>
+            </div>
+            <div id="recoveryBlock" class="recovery-block"></div>
+          </section>
+        </section>
+
+        <section id="settings" class="tab-panel" aria-labelledby="Settings">
+          <section class="section-band">
+            <div class="section-heading">
+              <p class="section-kicker">Dashboard configuration</p>
+              <h2>Site settings</h2>
+            </div>
+            <div class="settings-grid">
+              <div class="setting-item">
+                <div class="setting-meta">
+                  <strong>Stall timeout</strong>
+                  <p class="toolbar-copy">In-progress issues not updated within this time are automatically marked as stalled.</p>
+                </div>
+                <div class="setting-control">
+                  <label for="stallTimeoutHours">
+                    Hours until stalled
+                    <input id="stallTimeoutHours" type="number" min="0.1" max="168" step="0.5" value="1">
+                  </label>
+                  <div class="setting-actions">
+                    <button id="saveSettings" class="button primary">Save settings</button>
+                    <span id="settingsSaveStatus" class="save-status"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

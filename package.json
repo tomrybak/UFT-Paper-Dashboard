@@ -1,0 +1,12 @@
+{
+  "name": "uft-paper-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local UFT paper readiness dashboard with durable issue selection and history state.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

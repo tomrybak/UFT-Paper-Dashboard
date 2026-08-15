@@ -1,0 +1,1481 @@
+{
+  "schema": "uft-paper-dashboard.v1",
+  "lastUpdated": "2026-08-15T20:48:39.044Z",
+  "paper": {
+    "title": "Six-Dimensional Unified Field Theory with Compact Phases and Influence Kernels",
+    "shortName": "Compact-Phase UFT",
+    "currentBundle": "/mnt/c/Users/Tom/Downloads/UFT_v112_bundle.zip",
+    "activeResearchWorkspace": "/home/tom/.openclaw/workspace/uft_research",
+    "parameterLedger": "/home/tom/.openclaw/workspace/UFT_PARAMETER_LEDGER.csv",
+    "segmentationFile": "/home/tom/.openclaw/workspace/UFT_RESEARCH_SEGMENTATION.md",
+    "currentVersion": "v112",
+    "recommendedPublicationShape": "Split the monolith: Paper A should focus on the formal SK compact-sector core plus THz residual-template falsification; Paper B should hold galaxy phenomenology until the IR scale bridge, full SPARC sample, and lensing closure mature."
+  },
+  "statusSummary": "The paper has a promising formal spine and a much clearer falsification path than the earlier monolithic draft, but it is not public-ready until release packaging, citation verification, claim posture, and the latest research corrections are folded into the manuscript. The strongest current direction is formal SK spectral measure -> neutrino assignment gate -> THz residual template -> gauge-safe spectroscopy bound, with matter and galaxy work kept in separate maturity lanes.",
+  "publishScore": {
+    "current": 62,
+    "label": "Not public-ready, improving",
+    "basis": "Editorial and scientific readiness estimate based on manuscript packaging, reproducibility, claim discipline, citation state, and validation completeness."
+  },
+  "scoreHistory": [
+    {
+      "date": "2026-07-13",
+      "score": 45,
+      "label": "v112 bundle assembled",
+      "note": "The manuscript bundle existed with TeX/PDF/data/scripts, but the theory was still a broad program document with mixed claim maturity."
+    },
+    {
+      "date": "2026-07-13",
+      "score": 50,
+      "label": "Segmentation audit",
+      "note": "Critical hazards were separated: neutrino assignment mismatch, line normalization, formal-core derivation, galaxy scale bridge, and matter generation double counting."
+    },
+    {
+      "date": "2026-07-14",
+      "score": 57,
+      "label": "10k theory corpus",
+      "note": "The external corpus reached 11,835 broad arXiv sources and pushed the paper toward explicit projectors, constraint checks, and module-specific falsifiers."
+    },
+    {
+      "date": "2026-07-14",
+      "score": 66,
+      "label": "Cycle 012 checkpoint artifacts",
+      "note": "Formal SK toy kernel, neutrino/THz assignment gate, THz residual-search pipeline, magnetized-torus matter gate, and projector ledger improved the research direction."
+    },
+    {
+      "date": "2026-08-11",
+      "score": 58,
+      "label": "Public-readiness audit",
+      "note": "Score dropped after finding release blockers: missing metadata, undeclared dependencies, stale PaperA artifact, citation-map verification warning, and claim mismatch with latest research."
+    },
+    {
+      "date": "2026-08-11",
+      "score": 62,
+      "label": "Dashboard process added",
+      "note": "A durable issue queue, selection workflow, overview article, and investigation history were created so future sessions can continue from the same state."
+    }
+  ],
+  "researchSections": [
+    {
+      "id": "formal-core",
+      "name": "Formal SK Core",
+      "posture": "Core conditional",
+      "status": "Promising but must stay conditional.",
+      "summary": "The strongest mathematical spine is a positive compact spectral measure dmu(Omega) that produces retarded kernels K_R and positive noise N after tracing compact/environmental modes.",
+      "completedAnalysis": [
+        "Formal SK toy-kernel note created in uft_research/notes/formal_sk_toy_kernel.md.",
+        "No-signaling language corrected toward retarded controllable response plus noise/correlation separation.",
+        "Projector grammar established: dmu(Omega) -> P_X(Omega) -> observable_X."
+      ],
+      "nextValidation": [
+        "Convert toy SK kernel into a referee-ready appendix with assumptions clearly marked.",
+        "Avoid claiming full relativistic no-signaling unless the microscopic support and CPTP assumptions are explicit.",
+        "Tie gauge and gravity closures to the same conserved/transverse response structure."
+      ]
+    },
+    {
+      "id": "neutrino-thz",
+      "name": "Neutrino / THz Assignment",
+      "posture": "Viability anchor",
+      "status": "Useful but not yet a global fit.",
+      "summary": "A1/A4/A7/A8 scans show a stable roughly 12.1 THz anchor tied to the atmospheric splitting, but skipped low modes and sterile/cosmology constraints remain decisive.",
+      "completedAnalysis": [
+        "1024-row assignment gate generated across A1/A4/A7/A8.",
+        "Literal standard LED radius interpretation failed the scale gate.",
+        "THz framing shifted to induced compact-sector spectroscopy template."
+      ],
+      "nextValidation": [
+        "Run a NuFIT/sterile/cosmology scan with one live assignment catalog.",
+        "Define selection rules or numerical suppression ceilings for skipped A7/A8 modes.",
+        "Fix inconsistent holonomy-window language in the manuscript."
+      ]
+    },
+    {
+      "id": "spectroscopy",
+      "name": "THz / Far-IR Spectroscopy",
+      "posture": "Flagship search target",
+      "status": "Best near-term falsification path.",
+      "summary": "The clean laboratory target is not a single line claim; it is a matched-filter residual template after known molecular and instrumental structure is projected out.",
+      "completedAnalysis": [
+        "Residual-search pipeline drafted with HITRAN/HITEMP/ExoMol/CDMS/JPL catalog strategy.",
+        "44 representative THz template candidates generated for A1/A4/A7/A8.",
+        "Nuisance-projected matched-filter statistic documented."
+      ],
+      "nextValidation": [
+        "Run catalog overlap queries in 66.7-433.7 cm^-1 and 2,000,000-13,000,000 MHz.",
+        "Create injection-recovery and phase-scrambled false-alarm tests.",
+        "Keep amplitude as a bound/coupling parameter, not a discovery-level prediction.",
+        "Benchmark THz/time-varying optical residuals against the Optica accelerating-wave equation before attributing any leftover structure to compact phase."
+      ]
+    },
+    {
+      "id": "matter-sector",
+      "name": "Matter Sector",
+      "posture": "Speculative extension",
+      "status": "Needs replacement language before public release.",
+      "summary": "The newer gate says generation counting should come from magnetized-torus/projected chiral zero-mode index machinery, not independent branched-cover generation counting.",
+      "completedAnalysis": [
+        "Matter-sector gate drafted with flux index I_ab = product_r M_ab^(r).",
+        "Orbifold projection and Yukawa overlap checks identified.",
+        "Double-counting risk documented."
+      ],
+      "nextValidation": [
+        "Reframe branched covers as optional projections/geometries acting on a zero-mode Hilbert space.",
+        "Compute one toy generation count, chirality, Yukawa rank, charge neutrality, and anomaly check.",
+        "Remove title/abstract foregrounding of branched-cover generations until the toy model exists."
+      ]
+    },
+    {
+      "id": "galaxy",
+      "name": "Galaxy / SPARC Response",
+      "posture": "Phenomenological quarantine",
+      "status": "Interesting but not core evidence yet.",
+      "summary": "The four-galaxy SPARC runs are valuable diagnostics, but the eV-to-kpc bridge is not derived and the module needs full-sample, RAR, lensing, and local-test closure.",
+      "completedAnalysis": [
+        "Executed v103 single-band fit falsified the simplest halo substitute.",
+        "Executed v104 alpha-locked two-band fit showed partial viability on four systems.",
+        "Scale bridge failure and phenomenological status are documented."
+      ],
+      "nextValidation": [
+        "Move galaxy claims into Paper B or clearly quarantine them in Paper A.",
+        "Run frozen full-sample SPARC with matched competitors.",
+        "Add lensing/RAR likelihood and derive or abandon the IR bridge."
+      ]
+    },
+    {
+      "id": "release",
+      "name": "Release / Reproducibility",
+      "posture": "Publication blocker",
+      "status": "Not public-ready.",
+      "summary": "The bundle has useful source artifacts, but it lacks release metadata, dependency declarations, verified citation state, and accurate reproduction commands.",
+      "completedAnalysis": [
+        "Zip contains TeX/PDF/SPARC data/scripts/tables and no build-cruft.",
+        "SPARC data checksum matches manuscript.",
+        "CSV/SQLite research artifacts parse and SQLite integrity check passed."
+      ],
+      "nextValidation": [
+        "Add README, LICENSE, CITATION, requirements.txt, and reproducibility checklist.",
+        "Correct manuscript reproduction commands to match actual script CLIs.",
+        "Remove or clearly mark stale PaperA_v6 files before publishing."
+      ]
+    },
+    {
+      "id": "perception-measurement",
+      "name": "Perception / Measurement Channel",
+      "posture": "Interpretive bridge and possible test lane",
+      "status": "New investigation lane",
+      "summary": "Human vision is a useful conceptual test: photons become correlated with an object through scattering/absorption, then with the eye and nervous system, but ordinary decoherence must be separated from any proposed compact-phase memory.",
+      "completedAnalysis": [
+        "Observation logged: reflected photons carry information about an object's absorbed/reflected frequencies into human perception.",
+        "Initial deduction: this supports the paper's channel-projector language only if ordinary QED/decoherence is treated as the baseline, not replaced by loose entanglement language.",
+        "Dashboard issue added to require a careful optical/perception channel section."
+      ],
+      "nextValidation": [
+        "Model object -> scattered photon -> detector/eye as an open-system measurement chain.",
+        "Identify whether compact phase predicts residual spectral/temporal correlations beyond ordinary reflectance and detector processing.",
+        "Avoid claiming human perception lives in a persistent entangled moment unless the claim is made operational and falsifiable.",
+        "Use time-varying-media accelerating-wave optics as the standard baseline for any object-photon-eye or detector-channel compact-phase claim."
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue-001-release-metadata",
+      "rank": 1,
+      "title": "Add public release metadata and clear entry point",
+      "module": "Release / Reproducibility",
+      "severity": "blocker",
+      "status": "new",
+      "summary": "The public bundle has no README, LICENSE, CITATION, requirements.txt, or single build/reproduction path.",
+      "detail": "A reviewer or future session can find the TeX/PDF/data files, but there is no public-facing orientation layer that explains what to build, what is archival, what data is bundled, what dependencies are required, and what claims the package supports.",
+      "resolutionApproach": "Create a release README with the intended Paper A/Paper B split, exact build command, exact reproduction commands, dependency list, data provenance, checksums, and a public-readiness checklist. Add LICENSE and CITATION files appropriate for a preprint/source bundle.",
+      "sourceRefs": [
+        "/mnt/c/Users/Tom/Downloads/UFT_v112_bundle.zip",
+        "/tmp/openclaw-uft-public-audit/UFT_v112_bundle"
+      ],
+      "effort": "medium",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-002-claim-posture-flagship",
+      "rank": 2,
+      "title": "Align the flagship claim with the latest research direction",
+      "module": "Scope / Claim Governance",
+      "severity": "blocker",
+      "status": "new",
+      "summary": "The manuscript still calls SPARC/galaxy the flagship empirical confrontation, while the latest research says THz residual spectroscopy is the cleanest near-term test.",
+      "detail": "The newest module stance is formal SK spectral measure -> neutrino assignment gate -> THz residual template -> gauge-safe spectroscopy bound, with galaxy quarantined until an IR scale bridge is derived. Public text that foregrounds SPARC as the flagship sends the wrong credibility signal.",
+      "resolutionApproach": "Revise abstract, reader map, principal results, scope table, and SPARC section headings so Paper A foregrounds the formal core and THz residual-template search. Move SPARC to a quarantined Paper B lane or label it as diagnostics only.",
+      "sourceRefs": [
+        "UFT_v112.tex:161",
+        "UFT_v112.tex:1811",
+        "MEMORY.md#L4-L9"
+      ],
+      "effort": "medium",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-003-matter-sector-double-counting",
+      "rank": 3,
+      "title": "Replace branched-cover generation claim with magnetized-torus index route",
+      "module": "Matter Sector",
+      "severity": "blocker",
+      "status": "new",
+      "summary": "The manuscript still foregrounds branched-cover generation counting, but the research gate says generations need index/projection/anomaly machinery.",
+      "detail": "Branched covers can remain as geometry or projection language only if they act on the zero-mode Hilbert space. They should not independently multiply generation count alongside flux degeneracy.",
+      "resolutionApproach": "Rewrite title/abstract/appendix references to make magnetized compactification the first toy matter route. Add a compact table: flux integers, projected zero-mode dimension, Yukawa-rank check, charge conservation, anomaly condition, and current status.",
+      "sourceRefs": [
+        "UFT_v112.tex:102",
+        "UFT_v112.tex:2568",
+        "uft_research/notes/matter_sector_magnetized_torus_gate.md"
+      ],
+      "effort": "high",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-004-neutrino-window-inconsistency",
+      "rank": 4,
+      "title": "Fix neutrino benchmark/window inconsistency",
+      "module": "Neutrino / THz Assignment",
+      "severity": "blocker",
+      "status": "new",
+      "summary": "The manuscript benchmark uses nu3 = 0.30, while nearby text claims the restricted window is nu2,nu3 in [0.05,0.2].",
+      "detail": "This is a simple but high-risk consistency bug. A critical reader can catch it immediately, and it affects the credibility of the assignment catalog and any locked alpha statement.",
+      "resolutionApproach": "Replace the benchmark with a point inside the declared window, or change the declared window and rerun the assignment table. Then propagate alpha, mu_eff, mass sum, THz lines, and skipped-mode statements from one live catalog.",
+      "sourceRefs": [
+        "UFT_v112.tex:930",
+        "UFT_v112.tex:936",
+        "uft_research/data/neutrino_thz_assignment_gate.csv"
+      ],
+      "effort": "medium",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-005-live-assignment-catalog",
+      "rank": 5,
+      "title": "Unify A1/A4/A7/A8 assignment catalog across manuscript sections",
+      "module": "Neutrino / THz Assignment",
+      "severity": "high",
+      "status": "new",
+      "summary": "The paper needs one source of truth for assignments, alpha, mu_eff, skipped modes, and THz template lines.",
+      "detail": "Earlier segmentation identified a neutrino/THz assignment mismatch. Cycle 012 generated a better assignment gate, but the manuscript has not yet been reconciled section-by-section.",
+      "resolutionApproach": "Generate a manuscript-ready assignment appendix from the CSV, then replace all local numeric claims with references to the live table. Include branch status and which skipped modes are forbidden, heavy, or weakly coupled.",
+      "sourceRefs": [
+        "UFT_RESEARCH_SEGMENTATION.md:45",
+        "uft_research/notes/neutrino_thz_assignment_gate.md",
+        "uft_research/data/neutrino_thz_assignment_gate.csv"
+      ],
+      "effort": "high",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-006-thz-led-scale-framing",
+      "rank": 6,
+      "title": "Remove any direct standard LED photon-line framing",
+      "module": "THz / Far-IR Spectroscopy",
+      "severity": "high",
+      "status": "new",
+      "summary": "Literal THz compact radii fail the standard minimal LED scale gate.",
+      "detail": "Cycle 012 found that the roughly 12.1 THz anchor is tied to the atmospheric splitting, but literal micron-scale radii conflict with minimal neutrino LED constraints.",
+      "resolutionApproach": "State consistently that THz lines are induced compact-sector spectroscopy templates, not direct photon emission from a minimal neutrino KK radius. Add a short scale-gate paragraph near the first THz claim.",
+      "sourceRefs": [
+        "uft_research/notes/neutrino_thz_assignment_gate.md:59",
+        "MEMORY.md#L8-L9"
+      ],
+      "effort": "low",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-007-selection-rules-skipped-modes",
+      "rank": 7,
+      "title": "Add selection rules or suppression ceilings for skipped low modes",
+      "module": "Neutrino / THz Assignment",
+      "severity": "high",
+      "status": "new",
+      "summary": "A7 and A8 skip low modes; without rules or bounds, those modes become sterile/light-state falsifiers.",
+      "detail": "The latest assignment gate highlights A7 as especially risky because the skipped (1,0) mode sits close to the solar state.",
+      "resolutionApproach": "For every skipped low-winding mode, mark it as forbidden, heavy, or weakly coupled. Add numerical coupling ceilings where weakly coupled. Reject branches that cannot meet sterile and cosmology constraints.",
+      "sourceRefs": [
+        "uft_research/notes/neutrino_thz_assignment_gate.md:63",
+        "uft_research/notes/theory_10k_executive_synthesis.md:147"
+      ],
+      "effort": "high",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-008-thz-residual-search-not-executed",
+      "rank": 8,
+      "title": "Execute the molecular/instrumental residual search",
+      "module": "THz / Far-IR Spectroscopy",
+      "severity": "high",
+      "status": "new",
+      "summary": "The THz pipeline is well framed, but no HITRAN/HITEMP/ExoMol/CDMS/JPL overlap and residual test has been run.",
+      "detail": "The paper can credibly propose a search, but it should not imply validation until catalog masks, nuisance covariance, injection recovery, and false-alarm tests exist.",
+      "resolutionApproach": "Start with catalog overlap in 66.7-433.7 cm^-1 and 2,000,000-13,000,000 MHz. Produce a table of masked/unmasked candidate teeth and a first null-bound plan.",
+      "sourceRefs": [
+        "uft_research/notes/thz_residual_search_pipeline.md",
+        "uft_research/data/thz_template_candidates.csv"
+      ],
+      "effort": "high",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-022-time-varying-media-baseline",
+      "rank": 9,
+      "title": "Benchmark EM/time-varying-media claims against accelerating-wave baseline",
+      "module": "THz / Far-IR Spectroscopy",
+      "severity": "high",
+      "status": "new",
+      "summary": "The Optica accelerating-wave paper gives a standard-physics account of proper-time-like wave behavior, forward-time solutions, interface continuity, and apparent curved-spacetime effects in time-varying media.",
+      "detail": "This strengthens the UFT optical/perception and THz lanes by giving them a sharper baseline, but it also creates a weakness: UFT cannot treat time asymmetry, wave slowing, local energy changes, or effective curved-spacetime language as distinctive unless those effects survive the standard accelerating-wave/time-varying-media model.",
+      "resolutionApproach": "Add a subsection or appendix that models ordinary accelerating-wave/time-varying-media optics first, including pump/material energy accounting, loss, dispersion, interface acceleration, and detector nuisance terms. Only then introduce a compact-phase projector P_EM_timevary(Omega; n(t), pump, loss, detector) and define residual observables or null bounds beyond that baseline.",
+      "sourceRefs": [
+        "https://doi.org/10.1364/OPTICA.494630",
+        "https://www.thebrighterside.news/post/a-new-wave-equation-for-light-challenges-how-physics-explains-the-arrow-of-time/",
+        "/home/tom/.openclaw/workspace/uft_research/notes/time_varying_media_arrow_time_uft_analysis.md",
+        "/home/tom/.openclaw/workspace/uft_research/data/uft_theory_10000.sqlite:doi:10.1364/optica.494630"
+      ],
+      "effort": "medium",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-009-reproduction-commands-inaccurate",
+      "rank": 10,
+      "title": "Fix SPARC reproduction commands and script CLIs",
+      "module": "Release / Reproducibility",
+      "severity": "high",
+      "status": "new",
+      "summary": "The manuscript documents batch flags that sparc_reproduce.py does not actually implement.",
+      "detail": "The appendix shows --list, --competitors, and --aicbic options, but the bundled sparc_reproduce.py only supports --mrt, --galaxy, and --out. That breaks public reproducibility.",
+      "resolutionApproach": "Either implement the documented CLI or rewrite the appendix to call the actual scripts: sparc_reproduce.py for profile extraction, sparc_fit_competitors.py for v103, and sparc_fit_2band.py for v104. Add smoke-test commands.",
+      "sourceRefs": [
+        "UFT_v112.tex:3303",
+        "sparc_reproduce.py"
+      ],
+      "effort": "medium",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-010-dependencies-undeclared",
+      "rank": 11,
+      "title": "Declare Python dependencies",
+      "module": "Release / Reproducibility",
+      "severity": "high",
+      "status": "new",
+      "summary": "Fit scripts require scipy/numpy/pandas, but no requirements file is bundled.",
+      "detail": "In this environment, numpy and pandas were available but scipy was not, so the actual fit scripts could not run. Public release needs deterministic setup.",
+      "resolutionApproach": "Add requirements.txt with numpy, pandas, scipy, and matplotlib if figures are regenerated. Add a one-command smoke test that parses SPARC and a longer optional fit command.",
+      "sourceRefs": [
+        "sparc_fit_competitors.py",
+        "sparc_fit_2band.py",
+        "sparc_reproduce.py"
+      ],
+      "effort": "low",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-011-citation-verification",
+      "rank": 12,
+      "title": "Verify or remove citation_map_v112.md before public release",
+      "module": "Citations",
+      "severity": "high",
+      "status": "new",
+      "summary": "The citation map says entries were drafted from memory and must be verified.",
+      "detail": "That is a good internal note, but it should not ship as-is in a public bundle unless clearly marked as non-public working material.",
+      "resolutionApproach": "Verify all citation-map rows, insert needed bibliography entries, and convert the map into a clean provenance note. Otherwise move it to an internal folder excluded from public release.",
+      "sourceRefs": [
+        "citation_map_v112.md:3"
+      ],
+      "effort": "medium",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-012-stale-papera-artifact",
+      "rank": 13,
+      "title": "Remove or relabel stale PaperA_v6 artifact",
+      "module": "Release / Reproducibility",
+      "severity": "medium",
+      "status": "new",
+      "summary": "PaperA_v6 has placeholder author and a bibliography note that should not be public-facing.",
+      "detail": "Including older drafts can be useful for history, but public packages need to distinguish current manuscript from archival/internal material.",
+      "resolutionApproach": "Move PaperA_v6.tex/pdf into an archive folder with README context, or remove it from the release bundle. If it remains, fix placeholder author and bibliography warning.",
+      "sourceRefs": [
+        "PaperA_v6.tex:31",
+        "PaperA_v6.tex:1718"
+      ],
+      "effort": "low",
+      "impact": "medium",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-013-optional-missing-assets",
+      "rank": 14,
+      "title": "Resolve guarded missing figure/table placeholders",
+      "module": "Release / Reproducibility",
+      "severity": "medium",
+      "status": "new",
+      "summary": "Two source references are guarded with IfFileExists but render placeholder text if built without assets.",
+      "detail": "A guarded build may not fail, but public source should not silently produce missing figure/table placeholders in the compiled output.",
+      "resolutionApproach": "Either add NGC3198_kernel_bandfit.pdf and sparc_3pack_bandfit_table.tex, or remove that illustrative subsection from the public build until the assets exist.",
+      "sourceRefs": [
+        "UFT_v112.tex:2273",
+        "UFT_v112.tex:2277"
+      ],
+      "effort": "low",
+      "impact": "medium",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-014-galaxy-ir-bridge",
+      "rank": 15,
+      "title": "Derive or quarantine the eV-to-kpc IR bridge",
+      "module": "Galaxy / SPARC Response",
+      "severity": "high",
+      "status": "new",
+      "summary": "Galaxy response remains phenomenological until a real mechanism connects the compact spectrum to kpc-scale response.",
+      "detail": "The manuscript already admits a 25-order eV-to-kpc separation and a failed single-modulus bridge. That honesty should be elevated, not buried.",
+      "resolutionApproach": "Move galaxy results to Paper B unless an IR pole/collective/environmental mechanism is derived from the same dmu(Omega). Keep alpha-lock as an unexplained dimensionless coincidence under test.",
+      "sourceRefs": [
+        "UFT_v112.tex:1911",
+        "UFT_v112.tex:1932",
+        "uft_research/notes/projector_ledger.md"
+      ],
+      "effort": "high",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-015-full-sparc-lensing",
+      "rank": 16,
+      "title": "Run full SPARC/RAR/lensing validation before any galaxy preference claim",
+      "module": "Galaxy / SPARC Response",
+      "severity": "high",
+      "status": "new",
+      "summary": "Four galaxies are not enough for a public model-preference claim.",
+      "detail": "The v103/v104 four-galaxy runs are useful diagnostics, but the decisive tests are full frozen SPARC, radial-acceleration relation behavior, weak lensing, and local-gravity consistency.",
+      "resolutionApproach": "Implement a frozen sample pipeline, matched competitor priors, AIC/BIC reporting, lensing/RAR likelihood, and pre-registered cuts. Keep results blinded until the sample is frozen.",
+      "sourceRefs": [
+        "UFT_v112.tex:1908",
+        "UFT_v112.tex:2115"
+      ],
+      "effort": "high",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-016-formal-core-claim-boundary",
+      "rank": 17,
+      "title": "Tighten formal-core theorem language",
+      "module": "Formal SK Core",
+      "severity": "medium",
+      "status": "new",
+      "summary": "The formal result is strong inside an admissible class, but should not read like a fully derived UFT theorem.",
+      "detail": "The latest research says do not write that compact phases prove no-signaling unless microscopic structure is explicit. Positive noise permits correlations; retarded response controls signaling.",
+      "resolutionApproach": "Add a scope box before formal theorems: assumptions, what is proven, what is selected by admissibility, and what remains conjectural. Insert the SK toy model as the cited worked example.",
+      "sourceRefs": [
+        "uft_research/notes/formal_sk_toy_kernel.md",
+        "UFT_v112.tex:196"
+      ],
+      "effort": "medium",
+      "impact": "medium",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-017-line-strength-normalization",
+      "rank": 18,
+      "title": "Audit line-strength normalization and coupling counting",
+      "module": "THz / Far-IR Spectroscopy",
+      "severity": "medium",
+      "status": "new",
+      "summary": "Earlier review flagged possible double-counting of g_X in line-strength estimates.",
+      "detail": "Forecasts and null bounds become unstable if bare geometric overlap, projected spectral weight, and observed frequency pull are mixed.",
+      "resolutionApproach": "Define bare overlap, projected spectral weight, and observed pull once. Then propagate notation through the amplitude-budget and residual-search sections.",
+      "sourceRefs": [
+        "UFT_RESEARCH_SEGMENTATION.md:69",
+        "UFT_v112.tex:480"
+      ],
+      "effort": "medium",
+      "impact": "medium",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-018-gauge-safety",
+      "rank": 19,
+      "title": "Make gauge safety an explicit constraint layer",
+      "module": "Gauge Safety",
+      "severity": "medium",
+      "status": "new",
+      "summary": "Any spectroscopy/gauge channel needs Ward identity, transverse projector, and photon-sector bounds.",
+      "detail": "The 10k corpus identified gauge/Lorentz safety plus precision bounds as a repeated constraint pattern. Public paper should show this is not optional.",
+      "resolutionApproach": "Add a projector ledger row and short appendix tying EM channel leakage to photon mass, birefringence, dispersion, clock/cavity bounds, and Ward identity preservation.",
+      "sourceRefs": [
+        "uft_research/notes/projector_ledger.md",
+        "uft_research/notes/theory_10k_executive_synthesis.md"
+      ],
+      "effort": "medium",
+      "impact": "medium",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-019-monolith-split",
+      "rank": 20,
+      "title": "Split monolithic program document into Paper A and Paper B",
+      "module": "Publication Structure",
+      "severity": "medium",
+      "status": "new",
+      "summary": "The current v112 document contains formal core, lab search, neutrino sketch, matter extension, galaxy phenomenology, and strong-field outlook in one long manuscript.",
+      "detail": "A public first paper should be narrower and sharper. Broad monoliths make it harder for readers to see what is actually proven, what is a search target, and what is speculative.",
+      "resolutionApproach": "Extract Paper A as formal SK core plus THz residual-template search and minimal neutrino assignment gate. Move galaxy/SPARC and full modified-gravity language to Paper B.",
+      "sourceRefs": [
+        "UFT_v112.tex:282",
+        "UFT_v112.tex:1686"
+      ],
+      "effort": "high",
+      "impact": "high",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-020-dashboard-process",
+      "rank": 21,
+      "title": "Use this dashboard as the next-round selection and continuity layer",
+      "module": "Process",
+      "severity": "medium",
+      "status": "new",
+      "summary": "The new dashboard needs to become the standing intake for issue selection, resolution history, and publish-score updates.",
+      "detail": "The paper work is multi-session and easy to lose. A durable state file gives each future session the selected queue, issue history, score changes, and source paths.",
+      "resolutionApproach": "At the start of every UFT paper session, read dashboard-state.json. At the end, append history and score changes. Use selectedIssueIds as Tom's approved work queue.",
+      "sourceRefs": [
+        "/home/tom/.openclaw/workspace/uft-paper-dashboard/data/dashboard-state.json",
+        "/home/tom/.openclaw/workspace/uft-paper-dashboard/RECOVERY.md"
+      ],
+      "effort": "low",
+      "impact": "medium",
+      "statusUpdatedAt": null
+    },
+    {
+      "id": "issue-021-photon-perception-channel",
+      "rank": 22,
+      "title": "Add optical/perception measurement channel with standard-QM baseline",
+      "module": "Perception / Measurement Channel",
+      "severity": "medium",
+      "status": "new",
+      "summary": "Tom's observation about photons reflecting from objects and entering human vision is valuable, but the manuscript must distinguish ordinary scattering/decoherence/classical information from compact-phase claims.",
+      "detail": "A photon that reaches the eye is correlated with the object it scattered from, and the object's absorption/reflection spectrum shapes the information available to perception. In standard quantum theory this is not usually a persistent useful object-human entanglement; environmental decoherence turns the interaction record into robust classical information. The compact-phase theory can use this as a measurement-channel example only if it predicts something beyond ordinary QED material response and detector processing.",
+      "resolutionApproach": "Add a short subsection or appendix called Optical perception as a measurement channel. Start with the baseline chain object/material states -> scattering/absorption -> photon state -> retinal molecules -> neural classical record. Then define the compact-phase extension as an optional projector P_visual or P_EM-scatter acting on dmu(Omega), with proposed falsifiers: no residual phase-memory correlations after ordinary optical/material/detector nuisance models, wrong spectral structure, or any claim implying controllable signaling.",
+      "sourceRefs": [
+        "dashboard observation 2026-08-11",
+        "UFT_v112.tex:393-860",
+        "UFT_v112.tex:2286-2495",
+        "uft_research/notes/formal_sk_toy_kernel.md"
+      ],
+      "effort": "medium",
+      "impact": "medium",
+      "statusUpdatedAt": null
+    }
+  ],
+  "selectedIssueIds": [
+    "issue-001-release-metadata",
+    "issue-002-claim-posture-flagship",
+    "issue-003-matter-sector-double-counting",
+    "issue-004-neutrino-window-inconsistency",
+    "issue-005-live-assignment-catalog",
+    "issue-006-thz-led-scale-framing",
+    "issue-007-selection-rules-skipped-modes",
+    "issue-008-thz-residual-search-not-executed",
+    "issue-009-reproduction-commands-inaccurate",
+    "issue-010-dependencies-undeclared",
+    "issue-011-citation-verification",
+    "issue-012-stale-papera-artifact",
+    "issue-013-optional-missing-assets",
+    "issue-014-galaxy-ir-bridge",
+    "issue-015-full-sparc-lensing",
+    "issue-016-formal-core-claim-boundary",
+    "issue-017-line-strength-normalization",
+    "issue-018-gauge-safety",
+    "issue-019-monolith-split",
+    "issue-020-dashboard-process",
+    "issue-021-photon-perception-channel"
+  ],
+  "history": [
+    {
+      "id": "hist-2026-08-12-recheck-cycle-preferences",
+      "date": "2026-08-12",
+      "type": "dashboard-update",
+      "title": "Persisted issue filters and defined recheck cycle",
+      "summary": "Added durable issueViewPreferences for Module, Severity, and Show controls, backed by /api/preferences. Added a refined Status-tab recheck cycle combined from recovery notes, standing workflow memory, and Tom's review/select/submit process.",
+      "impact": "Future sessions can recover Tom's issue-view preferences and follow the same evidence-intake, selected-queue, verification, history, and handoff cycle without changing the existing selected fix queue."
+    },
+    {
+      "id": "hist-2026-08-12-time-varying-media-arrow-time",
+      "date": "2026-08-12",
+      "type": "source-analysis",
+      "title": "Added Optica accelerating-wave arrow-of-time paper",
+      "summary": "Added Koivurova, Robson, and Ornigotti, \"Time-varying media, relativity, and the arrow of time\" (Optica 2023, DOI 10.1364/OPTICA.494630) to the SQL corpus and analyzed its relevance to UFT optical/perception, THz, retarded-response, and energy-accounting claims.",
+      "impact": "Created a new high-priority baseline issue: UFT electromagnetic/time-varying-media claims must first reproduce or exceed the standard accelerating-wave explanation before compact-phase residuals are claimed.",
+      "sources": [
+        "https://doi.org/10.1364/OPTICA.494630",
+        "https://www.thebrighterside.news/post/a-new-wave-equation-for-light-challenges-how-physics-explains-the-arrow-of-time/",
+        "/home/tom/.openclaw/workspace/uft_research/notes/time_varying_media_arrow_time_uft_analysis.md"
+      ]
+    },
+    {
+      "id": "hist-2026-08-11-compact-status-sql-data",
+      "date": "2026-08-11",
+      "type": "dashboard-update",
+      "title": "Compact Status issue queue and SQL paper browser",
+      "summary": "Moved the issue queue under the Status tab, made the issue controls compact and top-aligned, added 10/20/30/all page-size options, added an Insights tab, and created a SQL Data tab for searching the 11,835-source physics-paper corpus with a reading pane.",
+      "impact": "Keeps Tom's selected 21-issue fix queue intact while making the dashboard the standing work surface for issue review, investigation paths, and corpus-based paper support."
+    },
+    {
+      "id": "hist-2026-08-11-issues-tab-submit",
+      "date": "2026-08-11",
+      "type": "dashboard-update",
+      "title": "Dedicated Issues tab and all-issue fix queue submitted",
+      "summary": "Added a first-class Issues tab with all ranked issues sorted highest priority first, expandable fix details, selected-row highlighting, Select all issues, Clear, and Submit for fix controls.",
+      "impact": "Submitted all 21 issues as a test; dashboard-state.json now has 21 selectedIssueIds and lastFixSubmission.count = 21."
+    },
+    {
+      "id": "hist-2026-08-11-photon-perception",
+      "date": "2026-08-11",
+      "type": "concept-investigation",
+      "title": "Photon perception and compact-phase measurement channel",
+      "summary": "Tom proposed that photons reflected from objects carry information into the eye, placing human perception inside an entangled informational moment. The dashboard now tracks this as a perception/measurement channel and issue for careful standard-QM baseline separation.",
+      "impact": "Adds a new investigation path: ordinary optical scattering and decoherence become the baseline; compact phase must predict residual spectral, temporal, or correlation structure beyond that baseline."
+    },
+    {
+      "id": "hist-2026-08-11-dashboard",
+      "date": "2026-08-11",
+      "type": "process-update",
+      "title": "Created durable paper dashboard process",
+      "summary": "Added a local dashboard plan with publish score, issue selection, research segmentation, overview article, and recoverable JSON state.",
+      "impact": "Future sessions can resume by reading dashboard-state.json and Tom can select the next issue-resolution queue."
+    },
+    {
+      "id": "hist-2026-08-11-public-audit",
+      "date": "2026-08-11",
+      "type": "audit",
+      "title": "Public-readiness audit of v112 bundle",
+      "summary": "Confirmed the bundle has TeX/PDF/SPARC data/scripts/tables and no build-cruft, but found release blockers in metadata, dependencies, citation verification, stale PaperA artifact, reproduction commands, and claim alignment.",
+      "impact": "Publish score was reduced from the post-cycle high and the next round should focus on release hygiene plus claim posture."
+    },
+    {
+      "id": "hist-2026-07-14-cycle012",
+      "date": "2026-07-14",
+      "type": "research-cycle",
+      "title": "Cycle 012 checkpoint artifacts",
+      "summary": "Created formal SK toy kernel, neutrino/THz assignment gate, THz residual-search pipeline, matter-sector magnetized-torus gate, and projector ledger.",
+      "impact": "Shifted the theory toward a shared positive spectral measure and explicit module projectors."
+    },
+    {
+      "id": "hist-2026-07-14-10k",
+      "date": "2026-07-14",
+      "type": "research-cycle",
+      "title": "10k theory corpus synthesis",
+      "summary": "Built a broad corpus with 11,835 arXiv sources and 11,974 merged rows, plus SQLite and factor/correlation/gap analyses.",
+      "impact": "Identified repeated constraint patterns: selection rules, residual statistics, index/anomaly checks, gauge safety, and IR scale bridges."
+    },
+    {
+      "id": "hist-2026-07-13-segmentation",
+      "date": "2026-07-13",
+      "type": "audit",
+      "title": "Strategic segmentation of UFT v112",
+      "summary": "Separated the paper into formal core, neutrino/THz, spectroscopy, galaxy, matter, gauge, and release modules with critical sync hazards.",
+      "impact": "Established that the theory should be treated as a constraint graph rather than a monolith."
+    },
+    {
+      "id": "hist-2026-07-13-bundle",
+      "date": "2026-07-13",
+      "type": "source",
+      "title": "UFT v112 bundle available",
+      "summary": "The source bundle exists at /mnt/c/Users/Tom/Downloads/UFT_v112_bundle.zip with UFT_v112.tex/pdf, PaperA_v6.tex/pdf, SPARC data, scripts, tables, and citation map.",
+      "impact": "Provided the concrete public-package target for later audits."
+    }
+  ],
+  "sources": [
+    {
+      "label": "v112 paper bundle",
+      "path": "/mnt/c/Users/Tom/Downloads/UFT_v112_bundle.zip",
+      "status": "exists"
+    },
+    {
+      "label": "active research workspace",
+      "path": "/home/tom/.openclaw/workspace/uft_research",
+      "status": "exists"
+    },
+    {
+      "label": "physics paper SQLite corpus",
+      "path": "/home/tom/.openclaw/workspace/uft_research/data/uft_theory_10000.sqlite",
+      "status": "exists"
+    },
+    {
+      "label": "parameter ledger",
+      "path": "/home/tom/.openclaw/workspace/UFT_PARAMETER_LEDGER.csv",
+      "status": "exists"
+    },
+    {
+      "label": "research segmentation",
+      "path": "/home/tom/.openclaw/workspace/UFT_RESEARCH_SEGMENTATION.md",
+      "status": "exists"
+    },
+    {
+      "label": "long-term memory UFT section",
+      "path": "/home/tom/.openclaw/workspace/MEMORY.md",
+      "status": "exists"
+    },
+    {
+      "label": "Optica accelerating-wave paper",
+      "path": "https://doi.org/10.1364/OPTICA.494630",
+      "status": "added to SQL corpus as doi:10.1364/optica.494630"
+    }
+  ],
+  "overviewArticle": {
+    "title": "A Plain-Language Overview Of The Compact-Phase UFT Paper",
+    "lede": "This paper asks whether some of the patterns we see in physics could come from a hidden internal phase structure attached to ordinary spacetime. The most mature version is not a final theory of everything; it is a disciplined effective-field-theory program with a shared spectral object, explicit projections into observable channels, and tests that can fail.",
+    "sections": [
+      {
+        "heading": "The core idea",
+        "body": "The theory keeps ordinary spacetime and ordinary causal time. It adds two compact internal phase directions, best thought of as hidden resonator coordinates rather than places or extra operational times. When those compact degrees of freedom are traced out, visible physics can inherit memory kernels, noise correlations, and discrete frequency fingerprints."
+      },
+      {
+        "heading": "The organizing insight",
+        "body": "The strongest insight is that every domain should draw from the same source object: a nonnegative spectral measure dmu(Omega). Neutrinos, spectroscopy, matter structure, gauge tests, and possible gravity response should not each get private spectra. Each domain must declare a projector P_X(Omega), an observable, and a falsifier."
+      },
+      {
+        "heading": "What makes it different",
+        "body": "Many speculative theories try to explain several anomalies by adding separate mechanisms. This framework is different because it forces cross-domain bookkeeping. The same hidden spectrum may be seen differently by different experiments, but incompatible spectra or unexplained private scales count against the theory rather than being patched in."
+      },
+      {
+        "heading": "What the theory may explain",
+        "body": "In its best current form, the theory suggests that rest-mass scales and some spectral features could arise from compact-phase standing patterns. It also gives a way to talk about hidden memory and correlations without faster-than-light signaling: correlations live in the noise/correlation kernel, while controllable response must remain retarded."
+      },
+      {
+        "heading": "The cleanest test",
+        "body": "The cleanest near-term path is THz/far-IR residual spectroscopy. The paper should not claim that one molecular-looking line proves anything. The better claim is a rigid residual template: after known molecular and instrumental structure is modeled and projected out, does a correlated compact-phase frequency pattern survive?"
+      },
+      {
+        "heading": "What has already been analyzed",
+        "body": "The work has already gone through a segmentation audit, a 10k-plus external theory-corpus pass, a formal SK toy-kernel checkpoint, a neutrino/THz assignment gate, a THz residual-search design, a magnetized-torus matter-sector gate, a projector ledger, and a public-readiness package audit. The SPARC galaxy module also has executed four-galaxy diagnostic fits, including a falsified single-band closure and a partially viable two-band closure."
+      },
+      {
+        "heading": "Main strengths",
+        "body": "The strongest parts are the explicit claim discipline, the shared spectral-measure grammar, the willingness to quarantine weaker modules, the move from line spotting to matched-filter residual statistics, and the recognition that matter generations need real index/projection/anomaly machinery."
+      },
+      {
+        "heading": "Main weaknesses",
+        "body": "The paper is still too broad as a public first release. The galaxy bridge is not derived, the matter sector needs a clean zero-mode toy model, the neutrino assignment needs a live global scan, spectroscopy needs catalog/residual execution, and the release bundle needs basic public-package hygiene."
+      },
+      {
+        "heading": "Best publication direction",
+        "body": "The strongest path is to split the project. Paper A should be the formal compact-phase influence-kernel EFT plus THz residual-template falsification and the minimal neutrino assignment gate. Paper B should hold galaxy phenomenology until the IR bridge, full SPARC sample, RAR/lensing tests, and local-gravity closure are ready."
+      }
+    ]
+  },
+  "fullPaperSections": [
+    {
+      "number": "Front matter",
+      "title": "Abstract, scope statement, and reader map",
+      "readiness": "blocker",
+      "readinessLabel": "needs rewrite",
+      "summary": "This section sets the reader's first impression and must match the current claim posture: Paper A should foreground the formal SK core and THz residual-template search, not galaxy/SPARC as the flagship.",
+      "keep": [
+        "Clear statement that compact directions are internal phase angles, not independent causal times.",
+        "Shared spectral-measure grammar already appears early and should remain.",
+        "The scope statement correctly rejects a UV-complete final-theory claim."
+      ],
+      "needsWork": [
+        "Replace galaxy-flagship language with THz residual-template flagship language.",
+        "Move branched-cover matter claims out of headline position until the zero-mode/index route is mature.",
+        "Add a public-package status note if releasing a program document rather than a journal-ready paper."
+      ],
+      "source": "UFT_v112.tex:78-180"
+    },
+    {
+      "number": "Section 1",
+      "title": "Motivation and overview",
+      "readiness": "high",
+      "readinessLabel": "strong but broad",
+      "summary": "The overview has useful claim discipline and already says the manuscript is a program document, but it should more sharply explain the Paper A/Paper B split.",
+      "keep": [
+        "Principal-results list gives readers a fast map of the intended contribution.",
+        "Cross-domain consistency rule is one of the paper's strongest differentiators.",
+        "The paper explicitly avoids speculative applications."
+      ],
+      "needsWork": [
+        "Make the THz residual-template lane the clean near-term validation path.",
+        "Use simpler public language for what compact phase means.",
+        "Reduce claims that sound unconditional when they are only conditional inside an admissible class."
+      ],
+      "source": "UFT_v112.tex:252-338"
+    },
+    {
+      "number": "Section 2",
+      "title": "Interferometric and optical phase-memory signatures",
+      "readiness": "medium",
+      "readinessLabel": "needs channel separation",
+      "summary": "This is where the photon/perception observation belongs conceptually, but it must separate ordinary optical scattering and decoherence from any extra compact-phase effect.",
+      "keep": [
+        "Visibility/null-test framing is better than a detection claim.",
+        "Spectral reconstruction rho(omega) connects naturally to the shared-measure grammar.",
+        "The paper already treats amplitude as bounded rather than pinned."
+      ],
+      "needsWork": [
+        "Add an optical measurement subsection: object -> scattered photon -> eye/detector -> neural/classical record.",
+        "Avoid calling all reflected visual information persistent useful entanglement; standard decoherence turns most of it into classical correlation.",
+        "Define what compact phase would add beyond standard QED material response."
+      ],
+      "source": "UFT_v112.tex:393-860"
+    },
+    {
+      "number": "Section 3",
+      "title": "Neutrino masses and compact harmonic assignments",
+      "readiness": "blocker",
+      "readinessLabel": "catalog needed",
+      "summary": "The neutrino section supplies the scale anchor, but it needs one live assignment catalog and a fixed holonomy-window convention.",
+      "keep": [
+        "Neutrino splittings are a plausible algebraic anchor for compact harmonic gaps.",
+        "The paper honestly labels the fit as an existence proof, not a global prediction.",
+        "Mass-sum falsifier language is useful."
+      ],
+      "needsWork": [
+        "Fix nu3=0.30 versus declared [0.05,0.20] window inconsistency.",
+        "Propagate A1/A4/A7/A8 gate values from one source table.",
+        "Add sterile/cosmology bounds and skipped-mode selection-rule ceilings."
+      ],
+      "source": "UFT_v112.tex:861-1144"
+    },
+    {
+      "number": "Sections 4-8",
+      "title": "EFT, quantization, well-posedness, and dimensional reduction",
+      "readiness": "high",
+      "readinessLabel": "core conditional",
+      "summary": "These are the strongest formal sections if they remain explicitly conditional on the admissible SK/influence-functional class.",
+      "keep": [
+        "Single operational time and compact internal phase distinction.",
+        "Retarded response versus noise/correlation separation.",
+        "Well-posedness and ghost-avoidance concerns are addressed directly."
+      ],
+      "needsWork": [
+        "Insert the formal SK toy kernel as the worked example cited by later modules.",
+        "Mark where positivity/no-signaling are assumptions of the admissible class rather than derived from the full UFT.",
+        "Tie gauge/gravity closures to conserved transverse tensor response."
+      ],
+      "source": "UFT_v112.tex:1145-1611"
+    },
+    {
+      "number": "Sections 9-11",
+      "title": "Claims hierarchy, limitations, and null tests",
+      "readiness": "high",
+      "readinessLabel": "useful governance",
+      "summary": "The claim hierarchy is a real strength and should become the spine of the public paper.",
+      "keep": [
+        "Derived, interpretation, phenomenology, and conjecture are separated.",
+        "The paper already lists hard falsifiers.",
+        "The limitations section gives a fair map of unresolved work."
+      ],
+      "needsWork": [
+        "Update validated-module table so galaxy is not listed as validated core evidence.",
+        "Add the visual/perception measurement channel as an issue and possible appendix, not as a proof.",
+        "Make dashboard-selected issues the standing next-round queue."
+      ],
+      "source": "UFT_v112.tex:1612-1810"
+    },
+    {
+      "number": "Galaxy module",
+      "title": "SPARC response and modified-gravity phenomenology",
+      "readiness": "high",
+      "readinessLabel": "Paper B only",
+      "summary": "The executed SPARC fits are valuable diagnostics, but the galaxy branch should remain quarantined until the IR bridge, full sample, and lensing closure are ready.",
+      "keep": [
+        "v103 single-band closure falsification is useful and honest.",
+        "v104 alpha-locked two-band partial viability is worth preserving as diagnostics.",
+        "Scale-bridge failure is explicitly admitted."
+      ],
+      "needsWork": [
+        "Move to Paper B or label as phenomenology throughout.",
+        "Run frozen full SPARC/RAR/lensing pipeline.",
+        "Derive a real eV-to-kpc IR mechanism or stop using galaxy response as support for the core."
+      ],
+      "source": "UFT_v112.tex:1811-2285"
+    },
+    {
+      "number": "Channel bookkeeping",
+      "title": "Projectors, shared spectrum, and cross-domain constraints",
+      "readiness": "high",
+      "readinessLabel": "central insight",
+      "summary": "This is the paper's most distinctive discipline: the same dmu(Omega) must feed different observables through explicit projectors.",
+      "keep": [
+        "Shared source spectrum prevents ad hoc private spectra.",
+        "Overlap-band constraints create real falsification routes.",
+        "The projector ledger can turn this into a clean table."
+      ],
+      "needsWork": [
+        "Add optical/perception channel projector P_visual or P_EM-scatter with ordinary QED baseline.",
+        "For each channel, list observable, nuisance model, and falsifier.",
+        "Tie issue resolutions to dashboard state."
+      ],
+      "source": "UFT_v112.tex:2286-2495"
+    },
+    {
+      "number": "Matter appendices",
+      "title": "Branched covers, flux, chirality, and generations",
+      "readiness": "blocker",
+      "readinessLabel": "rewrite before public",
+      "summary": "The matter module should be rebuilt around magnetized-torus/projected zero-mode index machinery, with branched covers demoted to optional geometry/projection language.",
+      "keep": [
+        "The text already admits anomaly cancellation remains open.",
+        "Flux quantization and zero-mode wavefunctions are the right direction.",
+        "The matter-sector gate provides a cleaner replacement route."
+      ],
+      "needsWork": [
+        "Remove independent branched-cover generation counting from headline claims.",
+        "Compute one toy model: projected dimension, Yukawa rank, charges, anomaly/tadpole checks.",
+        "Do not double-count cover tower and flux degeneracy."
+      ],
+      "source": "UFT_v112.tex:2558-2665"
+    },
+    {
+      "number": "Back matter",
+      "title": "Referee-closure upgrades, bibliography, provenance, and reproducibility",
+      "readiness": "blocker",
+      "readinessLabel": "release blockers",
+      "summary": "The source bundle has useful artifacts but still needs public package metadata, dependency declarations, verified citations, and accurate reproduction instructions.",
+      "keep": [
+        "SPARC data checksum and provenance are present.",
+        "The bundle contains source TeX, PDFs, data, scripts, and generated tables.",
+        "The dashboard now tracks history and issue selection."
+      ],
+      "needsWork": [
+        "Add README, LICENSE, CITATION, requirements.txt, and a build/reproduce checklist.",
+        "Fix documented SPARC CLI mismatch.",
+        "Verify citation_map_v112.md or exclude it from public release."
+      ],
+      "source": "UFT_v112.tex:2795-3314"
+    }
+  ],
+  "supportingDataSections": [
+    {
+      "name": "Current public bundle",
+      "status": "exists, not public-ready",
+      "summary": "The concrete release target contains the v112 monolith, an older PaperA artifact, SPARC data, scripts, generated tables, and citation map.",
+      "items": [
+        {
+          "label": "Bundle zip",
+          "path": "/mnt/c/Users/Tom/Downloads/UFT_v112_bundle.zip",
+          "role": "Current package target for public-readiness review."
+        },
+        {
+          "label": "UFT_v112.tex/pdf",
+          "path": "UFT_v112_bundle/UFT_v112.tex and UFT_v112.pdf",
+          "role": "Main program-document manuscript."
+        },
+        {
+          "label": "PaperA_v6.tex/pdf",
+          "path": "UFT_v112_bundle/PaperA_v6.tex and PaperA_v6.pdf",
+          "role": "Older extraction candidate; currently stale and should be relabeled or removed."
+        }
+      ],
+      "nextActions": [
+        "Create a clean release folder with only current public-facing artifacts.",
+        "Add package metadata and dependency files.",
+        "Decide whether PaperA_v6 is archived or replaced by a new Paper A extraction."
+      ]
+    },
+    {
+      "name": "Research workspace",
+      "status": "active",
+      "summary": "The active research workspace contains cycle notes, generated CSVs, scripts, and the 10k theory SQLite database.",
+      "items": [
+        {
+          "label": "Workspace",
+          "path": "/home/tom/.openclaw/workspace/uft_research",
+          "role": "Active research artifacts."
+        },
+        {
+          "label": "10k SQLite",
+          "path": "/home/tom/.openclaw/workspace/uft_research/data/uft_theory_10000.sqlite",
+          "role": "Broad corpus database used for factor, gap, and source-similarity analysis."
+        },
+        {
+          "label": "Executive synthesis",
+          "path": "/home/tom/.openclaw/workspace/uft_research/notes/theory_10k_executive_synthesis.md",
+          "role": "High-level findings from 11,835-source corpus."
+        }
+      ],
+      "nextActions": [
+        "Use the 10k corpus only as a map, not proof of physics.",
+        "Deep-read representative papers before citing them as support.",
+        "Keep the dashboard linked to generated artifacts and current source paths."
+      ]
+    },
+    {
+      "name": "Formal core support",
+      "status": "checkpoint built",
+      "summary": "Formal support is centered on the SK toy kernel and shared positive spectral measure.",
+      "items": [
+        {
+          "label": "Formal SK toy kernel",
+          "path": "uft_research/notes/formal_sk_toy_kernel.md",
+          "role": "Worked admissible compact oscillator bath example."
+        },
+        {
+          "label": "Projector ledger",
+          "path": "uft_research/notes/projector_ledger.md",
+          "role": "Maps dmu(Omega) to channel projectors, observables, and falsifiers."
+        },
+        {
+          "label": "Parameter ledger",
+          "path": "/home/tom/.openclaw/workspace/UFT_PARAMETER_LEDGER.csv",
+          "role": "Module-level posture, parameters, falsifiers, and next artifacts."
+        }
+      ],
+      "nextActions": [
+        "Fold the toy kernel into a manuscript appendix.",
+        "Add explicit assumptions before theorem-like language.",
+        "Make every channel declare projector, observable, and falsifier."
+      ]
+    },
+    {
+      "name": "Neutrino and THz support",
+      "status": "needs global scan",
+      "summary": "The assignment gate and THz candidate tables support the induced spectroscopy-template direction but do not replace a global fit or catalog residual search.",
+      "items": [
+        {
+          "label": "Assignment gate note",
+          "path": "uft_research/notes/neutrino_thz_assignment_gate.md",
+          "role": "A1/A4/A7/A8 scale gate and skipped-mode warnings."
+        },
+        {
+          "label": "Assignment CSV",
+          "path": "uft_research/data/neutrino_thz_assignment_gate.csv",
+          "role": "1024-row assignment scan."
+        },
+        {
+          "label": "THz candidates",
+          "path": "uft_research/data/thz_template_candidates.csv",
+          "role": "44 representative template teeth across assignment branches."
+        }
+      ],
+      "nextActions": [
+        "Run NuFIT/sterile/cosmology scans.",
+        "Resolve skipped low modes by rule, mass, or coupling ceiling.",
+        "Use generated tables as source of truth for manuscript numbers."
+      ]
+    },
+    {
+      "name": "Spectroscopy residual support",
+      "status": "pipeline drafted",
+      "summary": "The residual-search pipeline defines the correct statistical object but still needs catalog overlap and actual residual execution.",
+      "items": [
+        {
+          "label": "Residual-search note",
+          "path": "uft_research/notes/thz_residual_search_pipeline.md",
+          "role": "HITRAN/HITEMP/ExoMol/CDMS/JPL matched-filter strategy."
+        },
+        {
+          "label": "THz template note",
+          "path": "uft_research/notes/thz_template_candidates.md",
+          "role": "Representative candidate lines and usage guidance."
+        },
+        {
+          "label": "Optica accelerating-wave SQL source",
+          "path": "/home/tom/.openclaw/workspace/uft_research/data/uft_theory_10000.sqlite:doi:10.1364/optica.494630",
+          "role": "Standard time-varying-media optics baseline for THz/EM residual claims."
+        }
+      ],
+      "nextActions": [
+        "Query molecular catalogs across target frequency windows.",
+        "Add nuisance covariance, injection recovery, and false-alarm controls.",
+        "Report null bounds before any detection language.",
+        "Treat accelerating-wave/time-varying-media predictions as a nuisance baseline before compact-phase residual searches."
+      ]
+    },
+    {
+      "name": "Galaxy/SPARC support",
+      "status": "diagnostic only",
+      "summary": "SPARC artifacts support the Paper B phenomenology lane, not the core Paper A proof.",
+      "items": [
+        {
+          "label": "SPARC mass models",
+          "path": "UFT_v112_bundle/MassModels_Lelli2016c.mrt",
+          "role": "Bundled public SPARC catalog with matching checksum."
+        },
+        {
+          "label": "v103 fit results",
+          "path": "UFT_v112_bundle/sparc_fit_results_v103.json",
+          "role": "Single-band closure diagnostic and falsification."
+        },
+        {
+          "label": "v104 fit results",
+          "path": "UFT_v112_bundle/sparc_fit_results_v104.json",
+          "role": "Alpha-locked two-band diagnostic fit."
+        }
+      ],
+      "nextActions": [
+        "Fix CLI/reproducibility mismatch.",
+        "Run frozen full-sample SPARC/RAR/lensing pipeline.",
+        "Keep galaxy response quarantined pending IR bridge."
+      ]
+    },
+    {
+      "name": "Matter-sector support",
+      "status": "rewrite path identified",
+      "summary": "The newer matter support points away from loose branched-cover generation language and toward magnetized-torus index/projection machinery.",
+      "items": [
+        {
+          "label": "Matter gate note",
+          "path": "uft_research/notes/matter_sector_magnetized_torus_gate.md",
+          "role": "Flux-index zero-mode route with projection/Yukawa/anomaly tests."
+        },
+        {
+          "label": "10k gap samples",
+          "path": "uft_research/data/theory_10k_gap_source_samples.csv",
+          "role": "Examples of chirality/generation claims lacking index/anomaly machinery."
+        }
+      ],
+      "nextActions": [
+        "Build one explicit toy zero-mode model.",
+        "Add anomaly and charge checks.",
+        "Demote branched covers to optional projection/geometric language until proven."
+      ]
+    },
+    {
+      "name": "Perception and measurement support",
+      "status": "new investigation lane",
+      "summary": "Tom's photon/eye observation motivates a channel that compares ordinary optical information transfer with any compact-phase contribution to measurement, perception, and validation.",
+      "items": [
+        {
+          "label": "Dashboard history entry",
+          "path": "dashboard-state.json:hist-2026-08-11-photon-perception",
+          "role": "Records the observation and investigation direction."
+        },
+        {
+          "label": "New issue",
+          "path": "dashboard-state.json:issue-021-photon-perception-channel",
+          "role": "Tracks manuscript risk and proposed resolution for optical/perception language."
+        },
+        {
+          "label": "Time-varying media arrow-of-time analysis note",
+          "path": "/home/tom/.openclaw/workspace/uft_research/notes/time_varying_media_arrow_time_uft_analysis.md",
+          "role": "Correlates the Optica accelerating-wave paper with UFT optical/perception and compact-channel constraints."
+        }
+      ],
+      "nextActions": [
+        "Define baseline QED/decoherence account: object scatters/absorbs light, photons carry classical records after decoherence.",
+        "Define compact-phase hypothesis: extra phase-memory structure would appear as residual correlations or spectral fingerprints beyond ordinary material response.",
+        "Propose experiments that separate ordinary reflectance, detector processing, and compact-phase residuals.",
+        "Add P_EM_timevary(Omega; n(t), pump, loss, detector) as a candidate projector lane only after the standard accelerating-wave baseline is fixed."
+      ]
+    }
+  ],
+  "insights": [
+    {
+      "id": "insight-001-optical-perception-channel",
+      "area": "Measurement / perception",
+      "title": "Optical perception as a compact-phase channel test",
+      "status": "new lane",
+      "summary": "Reflected photons carry object information into detectors and eyes through ordinary scattering, absorption, and decoherence. The theory can use this as a strong explanatory bridge only if compact phase predicts residual spectral, temporal, or correlation structure beyond standard QED material response.",
+      "supportingSignals": [
+        "Human observation validates the broader idea that we infer reality through channel-filtered records, not direct access to objects.",
+        "The paper already uses projector language that can model object -> photon -> detector chains.",
+        "The photon/eye observation helps explain why compact-phase claims must be operational and falsifiable."
+      ],
+      "nextInvestigations": [
+        "Write a baseline measurement-chain subsection for object, scattered photon, retina/detector, and classical record.",
+        "Define P_visual or P_EM-scatter as an optional compact-phase projector acting on dmu(Omega).",
+        "Reject any claim that implies controllable signaling or persistent useful human-object entanglement without a measurable residual."
+      ]
+    },
+    {
+      "id": "insight-002-thz-residual-template",
+      "area": "Spectroscopy",
+      "title": "THz residual templates remain the best near-term public test",
+      "status": "highest-value validation",
+      "summary": "The induced THz/far-IR template lane is currently the cleanest way to let the paper make a strong empirical claim while staying honest about amplitude and nuisance models.",
+      "supportingSignals": [
+        "A stable roughly 12.1 THz anchor appears in the A1/A4/A7/A8 assignment gate.",
+        "The residual-search pipeline already defines nuisance projection and matched-filter logic.",
+        "A null result still improves the paper because it becomes a bound on compact-channel coupling."
+      ],
+      "nextInvestigations": [
+        "Run molecular catalog overlap against HITRAN/HITEMP/ExoMol/CDMS/JPL windows.",
+        "Add injection-recovery and phase-scrambled false-alarm tests.",
+        "Keep line strength as a bound parameter until a measured residual survives catalog and instrument projection."
+      ]
+    },
+    {
+      "id": "insight-003-shared-spectrum-discipline",
+      "area": "Formal structure",
+      "title": "The shared spectral measure is the theory's strongest differentiator",
+      "status": "core organizing principle",
+      "summary": "The theory is most credible when all domains draw from the same nonnegative dmu(Omega) and declare their projector, observable, nuisance model, and falsifier.",
+      "supportingSignals": [
+        "This discipline separates the paper from theories that add independent explanations for unrelated anomalies.",
+        "The 10k corpus synthesis repeatedly pointed to projector, selection-rule, and constraint-closure patterns.",
+        "The SK toy-kernel lane can make the formal claim conditional and referee-readable."
+      ],
+      "nextInvestigations": [
+        "Convert the projector ledger into a manuscript table.",
+        "For every claimed channel, list observable_X, P_X(Omega), nuisance model, and falsifier.",
+        "Mark private spectra or unexplained scales as theory debt rather than tolerated patches."
+      ]
+    },
+    {
+      "id": "insight-004-neutrino-selection-rules",
+      "area": "Neutrino / compact harmonics",
+      "title": "Skipped compact modes are a decisive theory gate",
+      "status": "blocking physics check",
+      "summary": "A7/A8 assignment branches can remain interesting only if skipped low modes are forbidden, lifted, or weakly coupled below sterile and cosmology bounds.",
+      "supportingSignals": [
+        "The assignment gate gives a useful catalog of branch risks instead of hiding them.",
+        "The neutrino mass-splitting anchor creates a compact-frequency scale that can feed spectroscopy.",
+        "The theory becomes stronger if it can explain why visible modes are selected rather than simply chosen."
+      ],
+      "nextInvestigations": [
+        "Run one live NuFIT/sterile/cosmology scan from the assignment CSV.",
+        "Add branch-by-branch skipped-mode status and coupling ceilings.",
+        "Reject branches that cannot satisfy sterile, cosmology, and mass-sum constraints."
+      ]
+    },
+    {
+      "id": "insight-005-matter-zero-mode-route",
+      "area": "Matter sector",
+      "title": "Generation structure should be rebuilt through zero-mode index checks",
+      "status": "rewrite path",
+      "summary": "The matter lane can improve substantially if branched-cover generation language is replaced by magnetized-torus or projected zero-mode index machinery with explicit anomaly and Yukawa-rank checks.",
+      "supportingSignals": [
+        "The matter-sector gate already identified flux-index machinery as the cleaner route.",
+        "The paper's current caveats about anomaly cancellation can become a strength if formalized.",
+        "A single toy model would do more for credibility than broad generation-count speculation."
+      ],
+      "nextInvestigations": [
+        "Compute one toy zero-mode spectrum, chirality count, and Yukawa rank.",
+        "Add charge neutrality, tadpole, and anomaly checks.",
+        "Use branched covers only as optional projection/geometric language unless they are mathematically tied to the zero-mode Hilbert space."
+      ]
+    },
+    {
+      "id": "insight-006-galaxy-ir-bridge",
+      "area": "Galaxy phenomenology",
+      "title": "Galaxy response is valuable only after the IR bridge is real",
+      "status": "quarantined",
+      "summary": "The SPARC fits are useful diagnostics, but the theory should not lean on galaxy evidence until it derives or abandons the compact eV-scale to kpc-scale response bridge.",
+      "supportingSignals": [
+        "The v103 single-band failure and v104 two-band partial viability are honest diagnostics.",
+        "The manuscript already acknowledges the scale bridge problem.",
+        "A derived collective or environmental IR mechanism would be a major differentiator if it works."
+      ],
+      "nextInvestigations": [
+        "Move galaxy claims to Paper B or a clearly labeled phenomenology appendix.",
+        "Run frozen full SPARC, RAR, lensing, and local-gravity checks before preference claims.",
+        "Search the corpus for viable nonlocal/retarded IR response mechanisms without importing ad hoc private scales."
+      ]
+    },
+    {
+      "id": "insight-007-gauge-safe-em-channel",
+      "area": "Gauge safety",
+      "title": "Any electromagnetic compact-channel claim must pass Ward and precision bounds",
+      "status": "constraint layer",
+      "summary": "The photon/perception and THz lanes both touch electromagnetic observables, so the paper should make gauge safety a first-class constraint rather than an afterthought.",
+      "supportingSignals": [
+        "The 10k corpus repeatedly identified gauge/Lorentz safety and precision bounds as common failure modes.",
+        "A transverse conserved projector lets the theory discuss EM leakage without immediately breaking known constraints.",
+        "Precision null tests can turn speculative channel coupling into bounded parameters."
+      ],
+      "nextInvestigations": [
+        "Add Ward identity and transverse-projector rows to the channel ledger.",
+        "List photon mass, birefringence, dispersion, cavity, and clock bounds as mandatory filters.",
+        "Use null constraints to set amplitude priors for THz and optical/perception channels."
+      ]
+    },
+    {
+      "id": "insight-008-sql-corpus-deep-reading",
+      "area": "Corpus support",
+      "title": "The 11,835-source SQL corpus should drive targeted deep reads",
+      "status": "active support tool",
+      "summary": "The database is best used as an investigation map: search by theory concept, identify representative sources, then deep-read and cite only the papers that actually support or challenge a claim.",
+      "supportingSignals": [
+        "The corpus stores lane, factor tags, solution tags, abstracts, and similarity edges.",
+        "The new SQL Data tab makes the corpus recoverable and searchable inside the dashboard process.",
+        "Corpus metrics and reading panes help a future session resume without re-discovering source paths."
+      ],
+      "nextInvestigations": [
+        "Search for retarded kernels, open systems, compactification, THz spectroscopy, gauge constraints, and index theorems.",
+        "Promote only deep-read papers into manuscript citations.",
+        "Use negative examples from the corpus to sharpen falsifiers and avoid overclaiming."
+      ]
+    },
+    {
+      "id": "insight-009-time-varying-media-arrow-time",
+      "area": "Time-varying media / arrow of time",
+      "title": "Accelerating-wave optics is now a required UFT baseline",
+      "status": "new constraint and test path",
+      "summary": "Koivurova, Robson, and Ornigotti show that time-varying wave speed can produce proper-time-like behavior, forward-time solutions, conserved wave-frame momentum, and effective curved-spacetime descriptions inside ordinary wave mechanics. UFT can use this as a powerful bridge, but only as a baseline that compact-phase residuals must exceed.",
+      "supportingSignals": [
+        "The paper validates that optical media can naturally generate observer-frame/time-frame distinctions without invoking compact dimensions.",
+        "Its forward-time-only accelerating-wave solutions resonate with UFT retarded-response discipline and no advanced controllable signaling.",
+        "Its pumped-medium energy accounting supports the UFT rule that local apparent energy changes require a global environment or compact-sector budget.",
+        "Photonic time crystals and epsilon-near-zero media provide plausible laboratory platforms for comparing standard predictions to compact-phase residuals."
+      ],
+      "nextInvestigations": [
+        "Derive an optical/time-varying-media limit of UFT and show it reduces to the accelerating-wave equation when compact coupling is zero.",
+        "Define P_EM_timevary(Omega; n(t), pump, loss, detector) and residual observables after standard medium response is modeled.",
+        "Use null tests in pumped photonic media to bound compact-channel coupling rather than claiming broad arrow-of-time evidence.",
+        "Keep this as support for channel/projector discipline, not evidence that two compact internal phase directions exist."
+      ]
+    }
+  ],
+  "fixQueueSubmissions": [
+    {
+      "id": "fix-1786509524893",
+      "date": "2026-08-12T04:38:44.893Z",
+      "issueIds": [
+        "issue-001-release-metadata",
+        "issue-002-claim-posture-flagship",
+        "issue-003-matter-sector-double-counting",
+        "issue-004-neutrino-window-inconsistency",
+        "issue-005-live-assignment-catalog",
+        "issue-006-thz-led-scale-framing",
+        "issue-007-selection-rules-skipped-modes",
+        "issue-008-thz-residual-search-not-executed",
+        "issue-009-reproduction-commands-inaccurate",
+        "issue-010-dependencies-undeclared",
+        "issue-011-citation-verification",
+        "issue-012-stale-papera-artifact",
+        "issue-013-optional-missing-assets",
+        "issue-014-galaxy-ir-bridge",
+        "issue-015-full-sparc-lensing",
+        "issue-016-formal-core-claim-boundary",
+        "issue-017-line-strength-normalization",
+        "issue-018-gauge-safety",
+        "issue-019-monolith-split",
+        "issue-020-dashboard-process",
+        "issue-021-photon-perception-channel"
+      ],
+      "count": 21
+    }
+  ],
+  "lastFixSubmission": {
+    "id": "fix-1786509524893",
+    "date": "2026-08-12T04:38:44.893Z",
+    "issueIds": [
+      "issue-001-release-metadata",
+      "issue-002-claim-posture-flagship",
+      "issue-003-matter-sector-double-counting",
+      "issue-004-neutrino-window-inconsistency",
+      "issue-005-live-assignment-catalog",
+      "issue-006-thz-led-scale-framing",
+      "issue-007-selection-rules-skipped-modes",
+      "issue-008-thz-residual-search-not-executed",
+      "issue-009-reproduction-commands-inaccurate",
+      "issue-010-dependencies-undeclared",
+      "issue-011-citation-verification",
+      "issue-012-stale-papera-artifact",
+      "issue-013-optional-missing-assets",
+      "issue-014-galaxy-ir-bridge",
+      "issue-015-full-sparc-lensing",
+      "issue-016-formal-core-claim-boundary",
+      "issue-017-line-strength-normalization",
+      "issue-018-gauge-safety",
+      "issue-019-monolith-split",
+      "issue-020-dashboard-process",
+      "issue-021-photon-perception-channel"
+    ],
+    "count": 21
+  },
+  "issueViewPreferences": {
+    "moduleFilter": "all",
+    "severityFilter": "all",
+    "pageSize": "10",
+    "updatedAt": "2026-08-12T05:33:55.580Z"
+  },
+  "recheckCycle": {
+    "title": "UFT paper recheck cycle",
+    "status": "active persistent process",
+    "summary": "A refined cycle for continuing the paper without losing state: recover the dashboard and source context, take in new observations or papers, rank issues, work only the selected queue unless Tom expands it, verify the manuscript and evidence, update history/score/issues, then hand the next review queue back to Tom.",
+    "refinedFrom": "Combined from RECOVERY.md, Tom's repeated review/select/submit-next-round instructions, the standing dashboard workflow in memory, and the current issue-submission process.",
+    "steps": [
+      {
+        "order": "1",
+        "name": "Recover state",
+        "summary": "Start by reading dashboard-state.json, MEMORY/daily notes, RECOVERY.md, selectedIssueIds, lastFixSubmission, scoreHistory, history, sources, and active SQL/research paths.",
+        "outputs": [
+          "Confirmed source paths",
+          "Selected queue loaded",
+          "Prior score/history understood"
+        ]
+      },
+      {
+        "order": "2",
+        "name": "Intake new evidence",
+        "summary": "Add new papers, observations, or session findings to SQL, notes, Insights, supporting data, and history before drawing conclusions.",
+        "outputs": [
+          "SQL/source rows when relevant",
+          "Analysis notes",
+          "New or revised insights"
+        ]
+      },
+      {
+        "order": "3",
+        "name": "Rank and scope",
+        "summary": "Review all open issues by rank and severity, preserve Tom's persisted issue filters, and treat selectedIssueIds as the approved next-round work queue.",
+        "outputs": [
+          "Ranked issue view",
+          "Persisted issue filters",
+          "Unselected issues left open"
+        ]
+      },
+      {
+        "order": "4",
+        "name": "Resolve selected work",
+        "summary": "Apply fixes to the manuscript, research artifacts, SQL data, notes, or dashboard only for selected or newly necessary issues, keeping claim posture conservative.",
+        "outputs": [
+          "Manuscript/research/dashboard edits",
+          "Issue status or resolution notes",
+          "Changed-source list"
+        ]
+      },
+      {
+        "order": "5",
+        "name": "Verify and re-score",
+        "summary": "Run available builds, JSON/SQL checks, source probes, citation/package checks, and theory consistency checks; update publish score only when readiness materially changes.",
+        "outputs": [
+          "Verification results",
+          "Updated scoreHistory when warranted",
+          "New blockers or resolved risks"
+        ]
+      },
+      {
+        "order": "6",
+        "name": "Log and hand off",
+        "summary": "Append history, maintain recovery paths, keep issueViewPreferences and selectedIssueIds durable, and leave Tom a clear list of what changed and what to review next.",
+        "outputs": [
+          "History entry",
+          "Recoverable dashboard-state.json",
+          "Next review queue"
+        ]
+      }
+    ],
+    "currentHandoff": [
+      "Current open issues: 22; Tom's previously submitted selected fix queue remains 21 issues.",
+      "Issue filter preferences now persist in dashboard-state.json through /api/preferences.",
+      "New evidence or observations should be added before final responses when they affect the UFT paper or compact-phase theory.",
+      "New unselected issues can be created during intake, but they should not silently enter the approved fix queue."
+    ],
+    "completionRule": "A recheck cycle is complete only after selected work is resolved or explicitly deferred, verification has run where available, dashboard history/supporting data/issues/score are updated, and Tom has a recoverable next-round review state."
+  },
+  "settings": {
+    "stallTimeoutMs": 3600000
+  }
+}
