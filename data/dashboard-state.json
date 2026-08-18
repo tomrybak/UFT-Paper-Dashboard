@@ -1,6 +1,6 @@
 {
   "schema": "uft-paper-dashboard.v1",
-  "lastUpdated": "2026-08-15T20:48:39.044Z",
+  "lastUpdated": "2026-08-16T05:30:08.587Z",
   "paper": {
     "title": "Six-Dimensional Unified Field Theory with Compact Phases and Influence Kernels",
     "shortName": "Compact-Phase UFT",
@@ -606,7 +606,8 @@
     "issue-018-gauge-safety",
     "issue-019-monolith-split",
     "issue-020-dashboard-process",
-    "issue-021-photon-perception-channel"
+    "issue-021-photon-perception-channel",
+    "issue-022-time-varying-media-baseline"
   ],
   "history": [
     {
@@ -1338,6 +1339,35 @@
   ],
   "fixQueueSubmissions": [
     {
+      "id": "fix-1786858208587",
+      "date": "2026-08-16T05:30:08.587Z",
+      "issueIds": [
+        "issue-001-release-metadata",
+        "issue-002-claim-posture-flagship",
+        "issue-003-matter-sector-double-counting",
+        "issue-004-neutrino-window-inconsistency",
+        "issue-005-live-assignment-catalog",
+        "issue-006-thz-led-scale-framing",
+        "issue-007-selection-rules-skipped-modes",
+        "issue-008-thz-residual-search-not-executed",
+        "issue-009-reproduction-commands-inaccurate",
+        "issue-010-dependencies-undeclared",
+        "issue-011-citation-verification",
+        "issue-012-stale-papera-artifact",
+        "issue-013-optional-missing-assets",
+        "issue-014-galaxy-ir-bridge",
+        "issue-015-full-sparc-lensing",
+        "issue-016-formal-core-claim-boundary",
+        "issue-017-line-strength-normalization",
+        "issue-018-gauge-safety",
+        "issue-019-monolith-split",
+        "issue-020-dashboard-process",
+        "issue-021-photon-perception-channel",
+        "issue-022-time-varying-media-baseline"
+      ],
+      "count": 22
+    },
+    {
       "id": "fix-1786509524893",
       "date": "2026-08-12T04:38:44.893Z",
       "issueIds": [
@@ -1367,8 +1397,8 @@
     }
   ],
   "lastFixSubmission": {
-    "id": "fix-1786509524893",
-    "date": "2026-08-12T04:38:44.893Z",
+    "id": "fix-1786858208587",
+    "date": "2026-08-16T05:30:08.587Z",
     "issueIds": [
       "issue-001-release-metadata",
       "issue-002-claim-posture-flagship",
@@ -1390,9 +1420,10 @@
       "issue-018-gauge-safety",
       "issue-019-monolith-split",
       "issue-020-dashboard-process",
-      "issue-021-photon-perception-channel"
+      "issue-021-photon-perception-channel",
+      "issue-022-time-varying-media-baseline"
     ],
-    "count": 21
+    "count": 22
   },
   "issueViewPreferences": {
     "moduleFilter": "all",
