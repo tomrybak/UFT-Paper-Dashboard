@@ -12,7 +12,7 @@ npm start
 Default URL:
 
 ```text
-http://127.0.0.1:8791/
+http://localhost:8791/
 ```
 
 Use another port with:
@@ -20,6 +20,18 @@ Use another port with:
 ```bash
 PORT=8792 npm start
 ```
+
+## Node Hosting
+
+Requires Node.js `>=22.12.0` because the server uses Node's built-in SQLite module for the paper database APIs.
+
+Runtime settings:
+
+- `PORT`: web server port, default `8791`
+- `HOST`: bind address, default `0.0.0.0`
+- `PAPER_DB_PATH`: optional path to the readable SQLite corpus database
+
+By default, the server looks for `data/uft_theory_10000.sqlite` inside this repo, then falls back to the sibling local workspace database at `../uft_research/data/uft_theory_10000.sqlite`.
 
 ## Durable State
 

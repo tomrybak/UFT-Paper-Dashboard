@@ -1,12 +1,16 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const { spawnSync } = require("child_process");
+const { DatabaseSync } = require("node:sqlite");
 
 const root = __dirname;
 const publicDir = path.join(root, "public");
 const statePath = path.join(root, "data", "dashboard-state.json");
-const paperDbPath = "/home/tom/.openclaw/workspace/uft_research/data/uft_theory_10000.sqlite";
+const paperDbPath = process.env.PAPER_DB_PATH || firstExistingPath([
+  path.join(root, "data", "uft_theory_10000.sqlite"),
+  path.resolve(root, "..", "uft_research", "data", "uft_theory_10000.sqlite")
+]);
+const host = process.env.HOST || "0.0.0.0";
 const port = Number(process.env.PORT || 8791);
 
 const VALID_STATUSES = new Set(["new", "in_progress", "stalled", "completed"]);
@@ -21,6 +25,10 @@ const mimeTypes = {
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg"
 };
+
+function firstExistingPath(candidates) {
+  return candidates.find(candidate => fs.existsSync(candidate)) || candidates[0];
+}
 
 function readState() {
   const state = JSON.parse(fs.readFileSync(statePath, "utf8"));
@@ -113,102 +121,113 @@ function serveStatic(req, res) {
   });
 }
 
-function runSqliteJson(script, args = []) {
-  const result = spawnSync("python3", ["-c", script, paperDbPath, ...args], {
-    encoding: "utf8",
-    maxBuffer: 10 * 1024 * 1024
-  });
-  if (result.status !== 0) {
-    throw new Error((result.stderr || result.stdout || "SQLite query failed").trim());
+function withPaperDb(callback) {
+  if (!fs.existsSync(paperDbPath)) {
+    throw new Error(`Paper database not found at ${paperDbPath}. Set PAPER_DB_PATH to a readable SQLite database.`);
   }
-  return JSON.parse(result.stdout);
+
+  const db = new DatabaseSync(paperDbPath, { readOnly: true });
+  try {
+    return callback(db);
+  } finally {
+    db.close();
+  }
+}
+
+function sqliteValue(db, sql, params = []) {
+  const row = db.prepare(sql).get(...params);
+  return row ? Object.values(row)[0] : null;
+}
+
+function sqliteRows(db, sql, params = []) {
+  return db.prepare(sql).all(...params);
 }
 
 function paperMetrics() {
-  return runSqliteJson(String.raw`
-import json, sqlite3, sys
-db = sys.argv[1]
-conn = sqlite3.connect(db)
-conn.row_factory = sqlite3.Row
-cur = conn.cursor()
-out = {}
-out["paperCount"] = cur.execute("select count(*) from sources").fetchone()[0]
-out["avgAbstractChars"] = round(cur.execute("select avg(length(coalesce(abstract,''))) from sources").fetchone()[0] or 0, 1)
-out["avgTitleChars"] = round(cur.execute("select avg(length(coalesce(title,''))) from sources").fetchone()[0] or 0, 1)
-out["laneCount"] = cur.execute("select count(distinct lane) from sources").fetchone()[0]
-out["factorTagCount"] = cur.execute("select count(*) from source_factors").fetchone()[0]
-out["solutionTagCount"] = cur.execute("select count(*) from source_solutions").fetchone()[0]
-out["topLanes"] = [dict(r) for r in cur.execute("select lane, count(*) as count from sources group by lane order by count desc limit 12")]
-out["topFactors"] = [dict(r) for r in cur.execute("select factor, count(*) as count from source_factors group by factor order by count desc limit 12")]
-out["topSolutions"] = [dict(r) for r in cur.execute("select solution_type, count(*) as count from source_solutions group by solution_type order by count desc limit 10")]
-out["years"] = [dict(r) for r in cur.execute("select year, count(*) as count from sources where year != '' group by year order by year desc limit 12")]
-conn.close()
-print(json.dumps(out))
-`);
+  return withPaperDb(db => ({
+    paperCount: sqliteValue(db, "select count(*) from sources"),
+    avgAbstractChars: Math.round((sqliteValue(db, "select avg(length(coalesce(abstract,''))) from sources") || 0) * 10) / 10,
+    avgTitleChars: Math.round((sqliteValue(db, "select avg(length(coalesce(title,''))) from sources") || 0) * 10) / 10,
+    laneCount: sqliteValue(db, "select count(distinct lane) from sources"),
+    factorTagCount: sqliteValue(db, "select count(*) from source_factors"),
+    solutionTagCount: sqliteValue(db, "select count(*) from source_solutions"),
+    topLanes: sqliteRows(db, "select lane, count(*) as count from sources group by lane order by count desc limit 12"),
+    topFactors: sqliteRows(db, "select factor, count(*) as count from source_factors group by factor order by count desc limit 12"),
+    topSolutions: sqliteRows(db, "select solution_type, count(*) as count from source_solutions group by solution_type order by count desc limit 10"),
+    years: sqliteRows(db, "select year, count(*) as count from sources where year != '' group by year order by year desc limit 12")
+  }));
 }
 
 function paperSearch(query, lane, limit, offset) {
-  return runSqliteJson(String.raw`
-import json, sqlite3, sys
-db, query, lane, limit, offset = sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4]), int(sys.argv[5])
-limit = max(1, min(limit, 200))
-offset = max(0, offset)
-tokens = [t.lower() for t in query.replace(",", " ").split() if t.strip()]
-where = []
-params = []
-if lane and lane != "all":
-    where.append("lane = ?")
-    params.append(lane)
-for token in tokens:
-    where.append("lower(coalesce(title,'') || ' ' || coalesce(abstract,'') || ' ' || coalesce(factor_tags,'') || ' ' || coalesce(solution_tags,'') || ' ' || coalesce(categories,'') || ' ' || coalesce(lane,'')) like ?")
-    params.append(f"%{token}%")
-where_sql = (" where " + " and ".join(where)) if where else ""
-conn = sqlite3.connect(db)
-conn.row_factory = sqlite3.Row
-cur = conn.cursor()
-total = cur.execute("select count(*) from sources" + where_sql, params).fetchone()[0]
-rows = []
-for r in cur.execute("""
-    select arxiv_id, lane, lane_role, lane_family, year, published, title, authors, categories, url,
-           factor_tags, solution_tags, abstract
-    from sources
-""" + where_sql + " order by published desc, arxiv_id desc limit ? offset ?", params + [limit, offset]):
-    row = dict(r)
-    abstract = row.get("abstract") or ""
-    row["abstractPreview"] = abstract[:360] + ("..." if len(abstract) > 360 else "")
-    row.pop("abstract", None)
-    rows.append(row)
-lanes = [dict(r) for r in cur.execute("select lane, count(*) as count from sources group by lane order by lane")]
-conn.close()
-print(json.dumps({"total": total, "limit": limit, "offset": offset, "rows": rows, "lanes": lanes}))
-`, [query || "", lane || "all", String(limit), String(offset)]);
+  const normalizedLimit = Math.max(1, Math.min(Number(limit) || 25, 200));
+  const normalizedOffset = Math.max(0, Number(offset) || 0);
+  const tokens = String(query || "")
+    .replace(/,/g, " ")
+    .split(/\s+/)
+    .map(token => token.trim().toLowerCase())
+    .filter(Boolean);
+  const where = [];
+  const params = [];
+
+  if (lane && lane !== "all") {
+    where.push("lane = ?");
+    params.push(lane);
+  }
+
+  for (const token of tokens) {
+    where.push("lower(coalesce(title,'') || ' ' || coalesce(abstract,'') || ' ' || coalesce(factor_tags,'') || ' ' || coalesce(solution_tags,'') || ' ' || coalesce(categories,'') || ' ' || coalesce(lane,'')) like ?");
+    params.push(`%${token}%`);
+  }
+
+  const whereSql = where.length ? ` where ${where.join(" and ")}` : "";
+
+  return withPaperDb(db => {
+    const total = sqliteValue(db, `select count(*) from sources${whereSql}`, params);
+    const rows = sqliteRows(db, `
+      select arxiv_id, lane, lane_role, lane_family, year, published, title, authors, categories, url,
+             factor_tags, solution_tags, abstract
+      from sources
+      ${whereSql}
+      order by published desc, arxiv_id desc
+      limit ? offset ?
+    `, [...params, normalizedLimit, normalizedOffset]).map(row => {
+      const { abstract = "", ...paper } = row;
+      return {
+        ...paper,
+        abstractPreview: abstract.slice(0, 360) + (abstract.length > 360 ? "..." : "")
+      };
+    });
+    const lanes = sqliteRows(db, "select lane, count(*) as count from sources group by lane order by lane");
+
+    return {
+      total,
+      limit: normalizedLimit,
+      offset: normalizedOffset,
+      rows,
+      lanes
+    };
+  });
 }
 
 function paperDetail(arxivId) {
-  return runSqliteJson(String.raw`
-import json, sqlite3, sys
-db, arxiv_id = sys.argv[1], sys.argv[2]
-conn = sqlite3.connect(db)
-conn.row_factory = sqlite3.Row
-cur = conn.cursor()
-row = cur.execute("select * from sources where arxiv_id = ?", (arxiv_id,)).fetchone()
-if row is None:
-    print(json.dumps({"found": False}))
-else:
-    out = dict(row)
-    out["found"] = True
-    out["factors"] = [r[0] for r in cur.execute("select factor from source_factors where arxiv_id = ? order by factor", (arxiv_id,))]
-    out["solutions"] = [r[0] for r in cur.execute("select solution_type from source_solutions where arxiv_id = ? order by solution_type", (arxiv_id,))]
-    out["similar"] = [dict(r) for r in cur.execute("""
+  return withPaperDb(db => {
+    const row = db.prepare("select * from sources where arxiv_id = ?").get(arxivId);
+    if (!row) return { found: false };
+
+    return {
+      ...row,
+      found: true,
+      factors: sqliteRows(db, "select factor from source_factors where arxiv_id = ? order by factor", [arxivId]).map(item => item.factor),
+      solutions: sqliteRows(db, "select solution_type from source_solutions where arxiv_id = ? order by solution_type", [arxivId]).map(item => item.solution_type),
+      similar: sqliteRows(db, `
         select source_a, source_b, jaccard, shared_count, shared_tags, title_a, title_b
         from source_similarity_edges
         where source_a = ? or source_b = ?
         order by jaccard desc, shared_count desc
         limit 8
-    """, (arxiv_id, arxiv_id))]
-    print(json.dumps(out))
-conn.close()
-`, [arxivId]);
+      `, [arxivId, arxivId])
+    };
+  });
 }
 
 function normalizeIssueViewPreferences(state, input = {}) {
@@ -366,6 +385,6 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(port, "127.0.0.1", () => {
-  console.log(`UFT paper dashboard running at http://127.0.0.1:${port}/`);
+server.listen(port, host, () => {
+  console.log(`UFT paper dashboard running at http://localhost:${port}/`);
 });
